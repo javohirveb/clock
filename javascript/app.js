@@ -13,8 +13,18 @@ setInterval(() => {
     let mm = day.getMinutes() * deg
     let ss = day.getSeconds() * deg
     let ssecond = day.getSeconds()
+    let mminute = day.getMinutes()
+    let hhour = day.getHours()
     if (ssecond<10) {
         ssecond = `0${ssecond}`
+    }
+
+    if (mminute<10) {
+        mminute = `0${mminute}`
+    }
+
+    if (hhour<10) {
+        hhour = `0${hhour}`
     }
 
     hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`
@@ -24,4 +34,6 @@ setInterval(() => {
     hours.textContent = `${day.getHours()}`
     minutes.textContent = `${day.getMinutes()}`
     seconds.textContent = `${ssecond}`
+    minutes.textContent = `${mminute}`
+    hours.textContent = `${hhour}`
 })
